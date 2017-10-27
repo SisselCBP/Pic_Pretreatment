@@ -61,8 +61,8 @@ def main(argv):
                 color = check_color(im.getpixel((i, j)))
                 om.putpixel([i,j], tuple(color))
         for terns in range(level+1):
-            for i in range(width):
-                for j in range(length):
+            for i in range(width-1):
+                for j in range(length-1):
                     color = om.getpixel((i, j))[:3]
                     if not (color[0] == color[1] and color[1] == color[2] and color[2] == color[0]):
                         if color not in after_color:
@@ -92,7 +92,7 @@ def check_color(rgb):
         return [255, 0, 0]
     elif r == 177 and g == 135 and b == 60:
         return [0, 255, 0]
-    elif r == 177 and g == 63 and b == 90:
+    elif r == 177 and g == 63 and (b == 90 or b == 96):
         return [0, 0, 255]
     elif r == 255 and g == 39 and b == 108:
         return [0, 128, 255]
