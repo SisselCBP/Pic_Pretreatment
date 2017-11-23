@@ -33,7 +33,8 @@ def main(argv):
             inputfile = [x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1] == '.png']
         elif opt in ("-s", "--self"):
             inputfile = [x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1] == '.png' and ('mask' in os.path.splitext(x)[0])]
-            outputfile = [x.replace("mask", "src") for x in inputfile]
+            #outputfile = [x.replace("mask", "src") for x in inputfile]
+			outputfile = [x for x in inputfile]
         elif opt in ("-l", "--level"):
             if arg.isdigit():
                 level = int(arg)
